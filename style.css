@@ -19,4 +19,13 @@ body{
 
 h3, #pontos{
     display: inline;
+    
+}
+
+#debug{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: lightgrey;
+    width: 200px;
 }
