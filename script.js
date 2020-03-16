@@ -9,6 +9,7 @@ snake[0] = {  // posição inicial da cobrinha
 };
 
 let direction = "right";
+let ponto = 0;
 
 function gerarComida(){
     return {        
@@ -85,6 +86,8 @@ function iniciarJogo(){
     }
     else{
         food = gerarComida();
+        ponto++;
+        document.getElementById("pontos").innerHTML= ponto;
     };
     
     let newHead = {     /* novo quadrado */
