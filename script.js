@@ -27,20 +27,22 @@ let food = gerarComida();
 
 
 function criarBG(){
-    context.fillStyle= "lightgreen"
+    context.fillStyle= "lightpink"
     context.fillRect(0, 0, 16 * box, 16 * box); // background onde acontecerá o jogo
 };
 
 function criarCobrinha(){
     for(i=0; i < snake.length; i++){
-        context.fillStyle= "green";
+        context.fillStyle= "black";
         context.fillRect(snake[i].x, snake[i].y, box, box); 
     }           
 };
 
 function drawFood(){
-    context.fillStyle= "red";
-    context.fillRect(food.x, food.y, box, box); //coordenadas da comidinha
+    //context.fillStyle= "red"; 
+    //context.fillRect(food.x, food.y, box, box); //coordenadas da comidinha
+    let apple = document.getElementById("apple");
+    context.drawImage(apple, food.x, food.y);
 };
 
 document.addEventListener("keydown", update);

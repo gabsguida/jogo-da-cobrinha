@@ -1,0 +1,22 @@
+.title{
+    border: 2px dashed black;
+    color: lightpink;
+    width: 508px;
+    text-align: center;
+}
+
+body{
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hidden{
+    display: none;
+}
+
+h3, #pontos{
+    display: inline;
+}
