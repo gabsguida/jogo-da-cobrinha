@@ -9,15 +9,21 @@ snake[0] = {  // posição inicial da cobrinha
 };
 
 let direction = "right";
-let food = {        
-    x:Math.floor(Math.random() * 15 + 1) * box,
-    y:Math.floor(Math.random() * 15 + 1) * box
+
+function gerarComida(){
+    return {        
+        x:Math.floor(Math.random() * 15 + 1) * box,
+        y:Math.floor(Math.random() * 15 + 1) * box
+    };
 };
+
+let food = gerarComida();
                     //Math.floor arredonda o numero pra baixo; 
                     //Math.ceil arredonda pra cima; 
                     //Math.round arredenda pro mais próximo; 
                     //Math.random escolhe um número aleatório entre 0 e 1
                     //Math é uma biblioteca de funções matemáticas
+
 
 function criarBG(){
     context.fillStyle= "lightgreen"
@@ -66,8 +72,13 @@ function iniciarJogo(){
     if(direction == "left") snakeX -= box;
     if(direction == "up") snakeY -= box;
     if(direction == "down") snakeY += box;
-    
-    snake.pop();  /* retira o último quadrado */
+
+    if(snakeX != food.x || snakeY != food.y){
+        snake.pop();  /* retira o último quadrado */
+    }
+    else{
+        food = gerarComida();
+    };
     
     let newHead = {     /* novo quadrado */
         x: snakeX,
