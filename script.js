@@ -12,10 +12,22 @@ let direction = "right";
 let ponto = 0;
 
 function gerarComida(){
-    return {        
-        x:Math.floor(Math.random() * 15 + 1) * box,
-        y:Math.floor(Math.random() * 15 + 1) * box
-    };
+    var tempFood;
+    var isValid = false;
+    while(isValid == false){
+        tempFood = {
+            x:Math.floor(Math.random() * 15 + 1) * box,
+            y:Math.floor(Math.random() * 15 + 1) * box
+        };
+        for(i=0; i < snake.length; i++){
+            if(tempFood.x == snake[i].x && tempFood.y == snake[i].y){
+                isValid = false;
+                break;
+            }
+            isValid = true;                   
+        };
+    }    
+    return tempFood;
 };
 
 let food = gerarComida();
