@@ -26,7 +26,9 @@ function gerarComida(){
             }
             isValid = true;                   
         };
-    }    
+    }   
+    document.getElementById("foodX").innerHTML = tempFood.x;
+    document.getElementById("foodY").innerHTML = tempFood.y; 
     return tempFood;
 };
 
